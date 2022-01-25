@@ -1,0 +1,758 @@
+// 3 keys
+#main-keys {
+    padding-top: 129px;
+    padding-bottom: 184px;
+    @include breakpoint(laptop) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @include breakpoint(tablet) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    @include breakpoint(mobile-all) {
+        padding-top: 60px;
+        border-bottom: 1px solid #707070;
+        padding-bottom: 20px;
+        margin-bottom: 50px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(mobile-all) {
+            display: block;
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+        // content
+        .content-left {
+            flex:1;
+            .content-intro {
+                padding-bottom: 58px;
+                @include breakpoint(tablet) {
+                    padding-bottom: 50px;
+                }
+                @include breakpoint(mobile-all) {
+                    padding-bottom: 50px;
+                }
+                h2 {
+                    font-size: 30px;
+                    line-height: 38px;
+                    font-family: $font-black;
+                    margin-bottom: 15px;
+                    @include breakpoint(tablet) {
+                        font-size: 28px;
+                        line-height: 34px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        font-size: 25px;
+                        line-height: 30px;
+                    }
+                    b, strong {
+                        color:$color-red;
+                    }
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 25px;
+                    max-width: 500px;
+                    @include breakpoint(mobile-all) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+            }
+            // key values
+            .key-values {
+                .feature {
+                    margin-bottom: 17px;
+                    position: relative;
+                    padding-left: 102px;
+                    @include breakpoint(tablet) {
+                        margin-bottom: 35px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        margin-bottom: 35px;
+                    }
+                    img {
+                        position: absolute;
+                        left:0px;
+                        top:17px;
+                    }
+                    span.title {
+                        display: block;
+                        font-size: 20px;
+                        line-height: 22px;
+                        color:$color-heading;
+                        font-family: $font-black;
+                        margin-bottom: 10px;
+                        @include breakpoint(mobile-all) {
+                            font-size: 20px;
+                            line-height: 31px;
+                            margin-bottom: 3px;
+                        }
+                    }
+                    p {
+                        font-size: 18px;
+                        line-height: 25px;
+                        max-width: 394px;
+                        @include breakpoint(mobile-all) {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .mobile-image {
+            display: none;
+            @include breakpoint(tablet) {
+                display: block;
+                margin-bottom: 40px;
+            }
+            @include breakpoint(mobile-all) {
+                display: block;
+                margin-bottom: 70px;
+            }
+            img {
+                @include breakpoint(tablet) {
+                    display: block;
+                    margin:0px auto;
+                }
+                @include breakpoint(mobile-all) {
+                    width: 250px;
+                    display: block;
+                    margin:0px auto;
+                }
+            }            
+        }
+        // image
+        .keys-image {
+            width: 436px;
+            padding-top: 60px;
+            @include breakpoint(tablet) {
+                display: none;
+            }
+            @include breakpoint(mobile-all) {
+                width: 100%;
+                display: none;
+            }
+            img {
+                @include breakpoint(mobile-all) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Key Features
+#key-features {
+    padding-bottom: 122px;
+    @include breakpoint(tablet) {
+        padding-bottom: 80px;
+    }
+    @include breakpoint(mobile-all) {
+        padding-bottom: 20px;
+    }
+    .container {
+        @include breakpoint(mobile-all) {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+    }
+    header {
+        text-align: center;
+        max-width: 714px;
+        margin:0px auto;
+        padding-bottom: 0px;
+
+        @include breakpoint(mobile-all) {
+            text-align: left;
+        }
+        h2 {
+            @include section-title;
+            margin-bottom: 21px;
+            @include breakpoint(tablet) {
+                font-size: 28px;
+            }
+            @include breakpoint(mobile-all) {
+                font-size: 25px;
+                line-height: 30px;
+                margin-bottom: 14px;
+            }
+        }
+        p {
+            @include intro-text;
+            margin-bottom: 0px;
+        }
+    }
+    // features
+    .features-list {
+        // div#infuse {
+        //     max-height: 250px;
+        // }
+        // #discover {
+        //     max-height: 150px;
+        // }
+        // div#unlock {
+        //     margin-bottom: 30px;
+        // }
+        .feature-card {
+            @include breakpoint(mobile-all) {
+                margin-bottom: 10px;
+            }
+            // icon
+            .feature-icon {
+                // height: 210px;
+                position: relative;
+                margin-bottom: 50px;                
+                    width: 300px;
+                    height: 250px !important;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;                
+                @include breakpoint(tablet) {
+                    height: 180px;
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+                @include breakpoint(mobile-all) {
+                    margin-bottom: 44px;
+                    height: auto;
+                    text-align: center;
+                }
+                .lottie {
+                    @include centre(both);
+                }
+                #discover {
+                    width: 80%;
+                    @include breakpoint(tablet) {
+                        width: 80%;
+                    }
+                }
+                #unlock {
+                    width: 100%;
+                }
+                #infuse {
+                    width: 65%;
+                }
+                // img {
+                //     @include centre(y);
+                //     @include breakpoint(tablet) {
+                //         max-height: 80%;
+                //         max-width: 70%;
+                //     }
+                //     @include breakpoint(mobile-all) {
+                //         @include clear-pos;
+                //     }
+                // }
+            }
+            // text
+            .feature-text {
+                h3 {
+                    font-size: 20px;
+                    line-height: 22px;
+                    margin-bottom: 10px;
+                    @include breakpoint(tablet) {
+                        font-size: 18px;
+                        line-height: 20px;
+                    }
+                    b, strong {
+                        color:$color-red;
+                    }
+                }
+                p {
+                    max-width: 320px;
+                    margin-bottom: 30px;
+                    @include breakpoint(tablet) {
+                        font-size: 16px;
+                        line-height: 20px;                        
+                    }
+                    @include breakpoint(mobile-all) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+                a.more-btn {
+                    @include btn-hollow;
+                    border:1px solid $color-red;
+                    text-align: center;
+                    color:$color-red;
+                    font-size: 16px;
+                    height: 50px;
+                    line-height: 49px;
+                    width: auto;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    &:hover {
+                        background:$color-red;
+                        color:$white;
+                    }
+                }
+            }
+        }
+        .col-md-4 {
+            &:first-child {
+                img {
+                    left:70px;
+                    @include breakpoint(tablet) {
+                        left:auto;
+                    }
+                    @include breakpoint(mobile-all) {
+                        left:auto;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                img {
+                    left:20px;
+                    @include breakpoint(tablet) {
+                        left:auto;
+                    }
+                    @include breakpoint(mobile-all) {
+                        left:auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Middle cta
+#middle-cta {
+    text-align: center;
+    background:$color-red;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(tablet) {
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+    @include breakpoint(mobile-all) {
+        padding-bottom: 110px;
+        padding-top: 74px;
+    }
+    .bg-shade {
+        position: absolute;
+        bottom:0px;
+        right:30px;
+        width: 150px;
+        @include breakpoint(mobile-all) {
+            right:30px;
+        }
+    }
+    h3 {
+        color:$white;
+        font-size: 23px;
+        line-height: 38px;
+        font-family: $font-black;
+        margin-bottom: 23px;
+        @include breakpoint(tablet) {
+            font-size: 21px;
+            line-height: 34px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @include breakpoint(mobile-all) {
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 38px;
+        }
+    }
+    a.btn-cta {
+        @include btn-hollow;
+        margin-bottom: 0px;
+        font-size: 15px;
+        height: 54px;
+        line-height: 52px;     
+        @include breakpoint(mobile-all) {
+            width: 270px;
+            font-size: 16px;
+            height: 60px;
+            line-height: 58px;
+            position: relative;
+            z-index:100;
+        }   
+    }
+}
+
+// Frameworks
+#frameworks {
+    padding-top: 157px;
+    @include breakpoint(desktop) {
+        overflow: hidden;
+    }
+    @include breakpoint(laptop) {
+        padding-top: 120px;
+        overflow: hidden;
+    }
+    @include breakpoint(tablet) {
+        padding-top: 100px;
+        
+    }
+    @include breakpoint(mobile-all) {
+        padding-top: 106px;
+        
+    }
+    .container {
+        position: relative;
+        padding-bottom: 192px;
+        @include breakpoint(laptop) {
+            padding-bottom: 120px;
+        }
+        @include breakpoint(tablet) {
+            padding-bottom: 100px;
+        }
+        @include breakpoint(mobile-all) {
+            padding-bottom: 50px;
+        }
+        .top-shape {
+            position: absolute;
+            top:-185px;
+            left:-175px;
+            @include breakpoint(tablet) {
+                display: none;
+            }
+        }
+        .bottom-shape {
+            position: absolute;
+            bottom:-150px;
+            right:-185px;
+            @include breakpoint(tablet) {
+                display: none;
+            }
+            @include breakpoint(mobile-all) {
+                display: none;
+            }
+        }        
+    }
+
+
+
+    header {
+        max-width: 842px;
+        margin:0px auto;
+        text-align: center;
+        padding-bottom: 150px;
+        position: relative;
+        z-index:50;
+        @include breakpoint(tablet) {
+            padding-bottom: 50px;
+        }
+        @include breakpoint(mobile-all) {
+            padding-bottom: 81px;
+            text-align: left;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        h2 {
+            @include section-title;
+            font-family: $font-main;
+            @include breakpoint(tablet) {
+                font-size: 28px;
+            }
+            @include breakpoint(mobile-all) {
+                font-size: 25px;
+                line-height: 31px;
+            }
+            b, strong {
+                font-family: $font-black;
+            }
+            em, i {
+                font-family: $font-black;
+            }
+        }
+    }
+
+        #faq-accordion  {
+            display: none;
+            position: relative;
+            @include breakpoint(mobile-all) {
+                display: block;
+            }
+            .mobile-shape {
+                position: absolute;
+                top:-200px;
+                left:-30px;
+            }
+            .accordion-heading {
+                &.active {
+                    .btn-more {
+                        content:url('../img/ico/white-close.svg')!important;
+                    }
+                }
+            }
+            .content {
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                padding:25px;
+                h4 {
+                    color:$color-red;
+                    font-size: 20px;
+                    line-height: 22px;
+                    margin-bottom: 10px;
+                }
+                p {
+                    margin-bottom: 25px;
+                }
+                ul {
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    li {
+                        font-size: 18px;
+                        line-height: 25px;
+                        color:$color-heading;
+                    }
+                }                
+            }
+            .set {
+
+                &:first-child {
+                    .card {
+                        .framework-card {
+                            background:#017DB0;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                   .card {
+                        .framework-card {
+                            background:$color-orange;
+                        }                       
+                   }
+                }
+                &:nth-child(3) {
+                    .card {
+                        .framework-card {
+                            background:$color-red;
+                        }                        
+                    }
+                }
+                &:nth-child(4) {
+                    .card {
+                        .framework-card {
+                            background:$color-blue;
+                        }                        
+                    }
+                }
+                &:nth-child(5) {
+                    .card {
+                        .framework-card {
+                            background:$color-pink;
+                        }
+                    }
+                }
+                &:nth-child(6) {
+                    .card {
+                        .framework-card {
+                            background:$color-red;
+                        }                        
+                    }
+                } 
+                
+                .card {
+                    @include breakpoint(mobile-all) {
+                        width: 100%;
+                    }      
+                    .framework-card {
+                        height: 396px;
+                        position: relative;
+                        margin-left: 00px;
+                        margin-right: 0px;
+                        margin-top: 14px;
+                        background:$color-blue;
+                        overflow: hidden;
+                        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                        margin-bottom: 0px;
+                        @include breakpoint(mobile-all) {
+                            height: 200px;
+                            margin-bottom: 0px;
+                        }
+                        h3 {
+                            @include centre(both);
+                            font-size: 25px;
+                            color:$white;
+                            text-align: center;
+                            width: 90%;       
+                            line-height: 30px;     
+                        }
+                        .btn-more {
+                            content:url('../img/ico/white-down.svg');
+                            margin:0px auto;
+                            display: block;
+                            display: none;
+                            @include animate-fade;
+                            @include centre(x);
+                            bottom:29px;
+                            @include breakpoint(mobile-all) {
+                                display: block;
+                            }                            
+                        }
+                    }                          
+                }                
+            }
+        }
+
+    // list
+    .frameworks-list {
+        display: flex;
+        margin-left: -8px;
+        margin-right: -8px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 50;
+        @include breakpoint(mobile-all) {
+            margin-right: 0px;
+            margin-left: 0px;
+            display: none;
+        }
+        .card {
+            width: 50%;
+            @include breakpoint(mobile-all) {
+                width: 100%;
+            }
+            &:first-child {
+                .framework-card {
+                    background:#017DB0;
+                }
+            }
+            &:nth-child(2) {
+                .framework-card {
+                    background:$color-orange;
+                }
+            }
+            &:nth-child(3) {
+                .framework-card {
+                    background:$color-red;
+                }
+            }
+            &:nth-child(4) {
+                .framework-card {
+                    background:$color-blue;
+                }
+            }
+            &:nth-child(5) {
+                .framework-card {
+                    background:$color-pink;
+                }
+            }
+            &:nth-child(6) {
+                .framework-card {
+                    background:$color-red;
+                }
+            }            
+        }
+        .framework-card {
+            height: 396px;
+            position: relative;
+            margin-left: 8px;
+            margin-right: 8px;
+            margin-bottom: 24px;
+            background:$color-blue;
+            overflow: hidden;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            @include breakpoint(tablet) {
+                height: 380px;
+                margin-bottom: 14px;                
+            }
+            @include breakpoint(mobile-all) {
+                height: 200px;
+                margin-bottom: 14px;
+            }
+            h3 {
+                @include centre(both);
+                font-size: 25px;
+                color:$white;
+                text-align: center;
+                width: 90%;
+                -webkit-transition: all 300ms ease-out;
+                -moz-transition: all 300ms ease-out;
+                -o-transition: all 300ms ease-out;
+                -ms-transition: all 300ms ease-out;	
+                transition: all 300ms ease-out;                
+            }
+            // hover
+            .frame-caption {
+                background-color:$white;
+                position: absolute;
+                z-index: 100;
+                    -webkit-transition: all 300ms ease-out;
+                    -moz-transition: all 300ms ease-out;
+                    -o-transition: all 300ms ease-out;
+                    -ms-transition: all 300ms ease-out;	
+                    transition: all 300ms ease-out;
+                left: 0;      
+                height: 100%;     
+                width: 100%;
+                bottom:-400px;
+            }
+            .frame-content {
+                padding-top: 31px;
+                padding-left: 34px;
+                padding-right: 30px;
+                @include breakpoint(tablet) {
+                    padding:20px;
+                }
+                h4 {
+                    color:$color-red;
+                    font-size: 20px;
+                    line-height: 22px;
+                    margin-bottom: 10px;
+                    @include breakpoint(tablet) {
+                        font-size: 18px;
+                        margin-bottom: 5px;
+                    }
+                }
+                p {
+                    margin-bottom: 15px;
+                    font-size: 17px;
+                    @include breakpoint(tablet) {
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin-bottom: 10px;
+                    }
+                }
+                ul {
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    margin-bottom: 10px;
+                    li {
+                        font-size: 17px;
+                        line-height: 25px;
+                        color:$color-heading;
+                        @include breakpoint(tablet) {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                    ul {
+                        margin-left: 30px;
+                        padding-top: 5px;
+                        @include breakpoint(tablet) {
+                            margin-left: 20px;
+                        }
+                        li {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .frame-caption {
+                    opacity: 1;
+                    left:0px;     
+                    bottom:0px;          
+                }    
+                h3 {
+                    top:-100%;
+                    opacity: 0;             
+                }            
+            }
+        }
+        
+    }
+}

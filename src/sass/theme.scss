@@ -1,0 +1,27 @@
+@import "theme/base/theme_variables";  // Theme Variables
+@import "theme/base/theme_reset.scss";  // Reset
+@import "theme/base/theme_icons.scss";  // Icons
+
+@import "theme/helpers/mixins"; // fonts styling etc
+@import "theme/helpers/typography"; // fonts styling etc
+@import "theme/helpers/breakpoints.scss"; // Bpoints
+@import "theme/helpers/grids"; // grids
+@import "theme/helpers/animate.scss"; // Animate
+
+// Vendors
+@import "theme/vendors/slick"; // slick
+
+// Components
+@import "theme/components/header"; // Header
+@import "theme/components/content"; // Content
+@import "theme/components/footer"; // Footer
+@import "theme/components/nav"; // Navigation
+
+// Load pages SCSS
+@import "theme/pages/home"; // Homepage
+@import "theme/pages/approach"; // Approach
+@import "theme/pages/blog"; // Blog
+@import "theme/pages/contact"; // Contact
+@import "theme/pages/resources"; // Purpose
+@import "theme/pages/about"; // About
+@import "theme/pages/cases"; // Casess

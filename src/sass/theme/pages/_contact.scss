@@ -1,0 +1,432 @@
+// Contact Page
+#contact-page {
+    margin-top: 151px;
+    padding-bottom: 153px;
+    position: relative;
+    @include breakpoint(mobile-all) {
+        padding-bottom: 0px;
+        margin-top: 72px;
+    }
+    .container {
+        @include breakpoint(mobile-all) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    .mobile-shape {
+        display: none;
+        @include breakpoint(mobile-all) {
+            display: block;
+            margin:0px auto;
+            margin-bottom: 30px;
+        }
+    }
+    .left-shape {
+        position: absolute;
+        left:0px;
+        top:0px;
+        @include breakpoint(mobile-all) {
+            display: none;
+        }
+        img {
+            position: relative;
+            left:-250px;
+            top:200px;
+            @include breakpoint(laptop) {
+                left:-300px;
+            }
+        }
+    }
+    .shape-bottom {
+        position: absolute;
+        bottom:0px;
+        right:0px;
+        overflow: hidden;
+        @include breakpoint(mobile-all) {
+            display: none;
+        }
+        img {
+            position: relative;
+            right:-250px;
+            bottom:-420px;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(mobile-all) {
+            display: block;
+        }
+        // sibder info
+        #contact-sidebar {
+            padding-top: 40px; 
+            position: relative;
+            z-index:100;
+            width: 40%;
+            @include breakpoint(mobile-all) {
+                width: 100%;
+            }
+            @include breakpoint(mobile-all) {
+                text-align: center;
+                padding-top: 0px;
+            }
+            // socials
+            .socials {
+                li {
+                    display: inline-block;
+                    margin-right: 10px;
+                    a {
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+            // mobile intro
+            .mobile-intro {
+                display: none;
+                @include breakpoint(mobile-all) {
+                    display: block;
+                    width: 290px;
+                    margin:0px auto;
+                    margin-top: 35px;
+                    p {
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-family: $font-black;
+                        b, strong {
+                            color:$color-red;
+                        }
+                    }
+                }
+            }
+            h1 {
+                color:$color-red;
+                font-size: 40px;
+                margin-bottom: 21px;
+                color:$black;
+                font-family: $font-extra;
+                @include breakpoint(laptop) {
+                    font-size: 36px;
+                }
+                @include breakpoint(tablet) {
+                    font-size: 34px;
+                }
+                @include breakpoint(mobile-all) {
+                    font-size: 50px;
+                    line-height: 78px;
+                }
+            }            
+            .contact-info {
+                h2 {
+                    font-size: 25px;
+                    line-height: 31px;
+                    margin-bottom: 25px;
+                    color:$color-red;
+                    @include breakpoint(laptop) {
+                        font-size: 23px;
+                        line-height: 29px;
+                    }
+                    @include breakpoint(tablet) {
+                        font-size: 22px;
+                        line-height: 28px;
+                        margin-bottom: 20px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        margin-bottom: 10px;
+                    }
+                }
+                span {
+                    display: block;
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin-bottom: 2px;
+                    @include breakpoint(laptop) {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint(tablet) {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        font-size: 20px;
+                    }
+                    a {
+                        color:$color-heading;
+                        &:hover {
+                            color:$color-orange;
+                        }
+                    }
+                }
+                p {
+                    a {
+                        color:$color-red;
+                        &:hover {
+                            color:$color-blue-dark;
+                        }
+                    }
+                }
+                address {
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin-bottom: 10px;
+                    font-style: normal;
+                    margin-top: 15px;
+                    margin-bottom: 32px;
+                    @include breakpoint(laptop) {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint(tablet) {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        font-size: 20px;
+                    }
+                    br {
+                        @include breakpoint(tablet) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        // form
+        #contact-form {
+            width: 577px;
+            position: relative;
+            z-index:10;
+            background:$color-blue;
+            padding-bottom: 20px;
+            @include breakpoint(tablet) {
+                width: 520px;
+                padding:15px;
+            }
+            @include breakpoint(mobile-all) {
+                width: 100%;
+                padding-top: 30px;
+                padding-bottom: 60px;
+                margin-top: 40px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            #contact-inner {
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                background:$white;
+                width: 612px;
+                margin-top: 21px;
+                position: relative;
+                left:-60px;
+                padding-top: 52px;
+                padding-left: 60px;
+                padding-right: 60px;
+                padding-bottom: 60px;
+                @include breakpoint(tablet) {
+                    width: 400px;
+                    left:0px;
+                    padding:30px;
+                }
+                @include breakpoint(mobile-all) {
+                    width: 100%;
+                    left:auto;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 30px;
+                }
+                // intro
+                .form-intro {
+                    margin-bottom: 40px;
+                    @include breakpoint(mobile-all) {
+                        text-align: center;
+                        padding-bottom: 30px;
+                        display: none;
+                    }
+                    p {
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-family: $font-black;
+                        strong {
+                            color:$color-red;
+                        }
+                    }
+                }
+                // wrapper
+                .form-wrapper {
+                    label {
+                        display: block;
+                        margin-bottom: 7px;
+                        font-size: 13px;
+                        line-height: 19px;
+                        font-family: $font-main!important;
+                        @include breakpoint(mobile-all) {
+                            font-size: 16px;
+                        }
+                    }                    
+                    .form-row {
+                        margin-bottom: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-left: -7px;
+                        margin-right: -7px;
+                        @include breakpoint(mobile-all) {
+                            display: block;
+                        }
+                        .form-col {
+                            width: 50%;
+                            padding-left: 7px;
+                            padding-right: 7px;
+                            @include breakpoint(mobile-all) {
+                                width: 100%!important;
+                                margin-bottom: 14px;
+                            }
+                            &.col-full {
+                                width: 100%;
+                            }
+                            input {
+                                width: 100%;
+                                height: 34px;
+                                line-height: 34px;
+                                border:1px solid #DADADA;
+                                padding-left: 10px;
+                                @include breakpoint(mobile-all) {
+                                    height: 48px;
+                                    line-height: 48px;
+                                }
+                            }
+                            label {
+                                display: block;
+                                margin-bottom: 7px;
+                                font-size: 13px;
+                                line-height: 19px;
+                                @include breakpoint(mobile-all) {
+                                    font-size: 16px;
+                                }
+                            }
+                            textarea {
+                                width: 100%;
+                                height: 81px;
+                                border:1px solid #DADADA;
+                                padding: 10px;     
+                                @include breakpoint(mobile-all) {
+                                    height: 100px;
+                                }                           
+                            }
+                        }
+                    }
+                    footer {
+                        padding-top: 10px;
+                        input {
+                            background:$color-red;
+                            color:$white;
+                            border:none;
+                            width: 154px;
+                            height: 38px;
+                            line-height: 38px;
+                            font-size: 18px;
+                            font-family: $font-black;
+                            @include animate-fade;
+                            @include breakpoint(mobile-all) {
+                                width: 100%;
+                                font-size: 16px;
+                                line-height: 60px;
+                                height: 60px;
+                            }
+                            &:hover {
+                                background:$color-orange;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .bottom-notice {
+                    padding-top: 64px;
+                    @include breakpoint(laptop) {
+                        padding-top: 40px;
+                    }
+                    @include breakpoint(tablet) {
+                        padding-top: 30px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        padding-top: 20px;
+                    }
+                    small {
+                        font-size: 25px;
+                        font-family: $font-black;
+                        display: flex;
+                        align-items: center;
+                        @include breakpoint(laptop) {
+                            font-size: 23px;
+                        }
+                        @include breakpoint(tablet) {
+                            font-size: 20px;
+                        }
+                        @include breakpoint(mobile-all) {
+                            display: block;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                        img {
+                            margin-left: 30px;
+                            width: 52px;
+                            @include breakpoint(mobile-all) {
+                                display: block;
+                                margin:0px auto;
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.top-shape-wrapper {
+    position: absolute;
+    top:0px;
+    right:0px;
+    overflow: hidden;
+    @include breakpoint(mobile-all) {
+        display: none;
+    }
+    .top-shape {
+        position: relative;
+        top:-270px;
+        right:-370px;
+    }
+}
+
+.wpcf7-not-valid-tip {
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.wpcf7-not-valid {
+    border-color:$color-red!important;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    padding:0px;
+    border:none;
+    color:$color-red;
+    margin-left: 0px;
+}
+
+.red-label {
+    color:$color-red;
+    font-family: $font-black;
+}
+
+.blue-label {
+    color:$color-blue-dark;
+    font-family: $font-black;
+}
+
+.orange-label {
+    color:$color-orange;
+    font-family: $font-black;
+}
+

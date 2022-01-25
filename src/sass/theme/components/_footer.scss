@@ -1,0 +1,181 @@
+// Page footer
+#page-footer {
+    background:#FAFBFC;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    position: relative;
+    z-index:410;
+    @include breakpoint(mobile-all) {
+        padding-top: 16px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(mobile-all) {
+            flex-wrap: wrap;
+        }
+    }
+    // about
+    .footer-about {
+        width: 200px;
+        padding-top: 10px;
+        @include breakpoint(tablet) {
+            margin-right: 40px;
+        }
+        @include breakpoint(mobile-all) {
+            padding-bottom: 25px;
+            padding-top: 0px;
+        }
+        img {
+            @include breakpoint(tablet) {
+                width: 160px;
+            }
+            @include breakpoint(mobile-all) {
+                width: 124px;
+            }
+        }
+    }
+    // nav
+    .footer-nav {
+        display: flex;
+        width: 700px;
+        justify-content: space-between;
+        .nav-block {
+            margin-left: 55px;
+            @include breakpoint(laptop) {
+                margin-right: 40px;
+            }
+            @include breakpoint(tablet) {
+                margin-left: 30px;
+            }
+            @include breakpoint(mobile-all) {
+                margin-left: 0px;
+            }
+            ul {
+                li {
+                    display: block;
+                    margin-bottom: 5px;
+                    @include breakpoint(laptop) {
+                        margin-bottom: 4px;
+                    }
+                    @include breakpoint(tablet) {
+                        margin-bottom: 3px;
+                    }
+                    @include breakpoint(mobile-all) {
+                        margin-bottom: 0px;
+                    }
+                    a {
+                        font-size: 20px;
+                        line-height: 32px;
+                        color:$color-heading;
+                        @include breakpoint(laptop) {
+                            font-size: 18px;
+                            line-height: 30px;
+                        }
+                        @include breakpoint(tablet) {
+                            font-size: 18px;
+                            line-height: 28px;
+                        }
+                        @include breakpoint(mobile-all) {
+                            font-size: 15px;
+                            line-height: 30px;
+                        }
+                        &:hover {
+                            color:$color-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Certs
+#certs {
+    background:#FAFBFC;
+    padding-bottom: 0px;
+    padding-top: 70px;
+    position: relative;
+    z-index:50;
+    @include breakpoint(laptop) {
+        padding-top: 50px;
+    }
+    @include breakpoint(tablet) {
+        padding-top: 40px;
+    }
+    @include breakpoint(mobile-all) {
+        padding-top: 46px;
+    }
+    #certs-wrapper {
+        padding-top: 20px;
+        border-top: 1px solid rgba(#A09D9D, 0.6);
+        @include breakpoint(laptop) {
+            padding-top: 10px;
+        }
+        @include breakpoint(mobile-all) {
+            padding-top: 0px;
+        }
+        span.title {
+            display: block;
+            font-size: 18px;
+            line-height: 40px;
+            font-family: $font-black;
+            color:$color-heading;
+            margin-bottom: 0px;
+            @include breakpoint(tablet) {
+                font-size: 16px;
+            }
+            @include breakpoint(mobile-all) {
+                font-size: 16px;
+            }
+        }
+    }
+    // list
+    .certs-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(#A09D9D, 0.6);
+        padding-top: 15px;
+        padding-bottom: 25px;
+        @include breakpoint(laptop) {
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        @include breakpoint(tablet) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        @include breakpoint(mobile-all) {
+            flex-wrap: wrap;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            justify-content: flex-start;
+        }
+        .logo {
+            @include breakpoint(laptop) {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            @include breakpoint(tablet) {
+                margin-bottom: 25px;
+                text-align: center;
+            }
+            @include breakpoint(mobile-all) {
+                width: 33%;
+                margin-bottom: 25px;
+            }
+        }
+        img {
+            @include breakpoint(laptop) {
+                max-width: 80%;
+            }
+            @include breakpoint(tablet) {
+                max-width: 70%;
+            }
+            @include breakpoint(mobile-all) {
+                max-width: 70%;
+            }
+        }
+    }
+}

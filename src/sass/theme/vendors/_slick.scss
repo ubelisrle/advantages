@@ -1,0 +1,536 @@
+// Slick Slider
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+
+/*===================================
+=            Slick Theme            =
+===================================*/
+
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("../img/ico/ajax-loader.gif") center center no-repeat;
+    }
+}
+
+#dots-wrapper {
+    padding-top: 23px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #DADADA;
+    @include breakpoint(laptop) {
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+    @include breakpoint(tablet) {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    @include breakpoint(mobile-all) {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+}
+
+.dots-container {
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 11px;
+        width: 11px;
+        margin: 0 9px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 11px;
+            width: 11px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 0px;
+            cursor: pointer;
+            @include breakpoint(laptop) {
+                width: 24px;
+                height: 24px;
+            }
+            @include breakpoint(mobile-all) {
+                width: 18px;
+                height: 18px;
+            }            
+            &:hover, &:focus {
+                outline: none;
+                &:before {
+                    opacity: $slick-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $slick-dot-character;
+                width: 11px;
+                height: 11px;
+                font-family: $slick-font-family;
+                font-size: 0px;
+                line-height: 12px;
+                text-align: center;
+                color: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                border-radius:50%;
+                background:$color-heading;
+                
+            }
+        }
+        &.slick-active button:before {
+            color: $white;
+            background:$color-blue-dark;
+        }
+    }
+}
+
+.slide-nav {
+    list-style: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 15px;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 11px;
+        width: 11px;
+        margin: 0 9px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 11px;
+            width: 11px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 0px;
+            cursor: pointer;
+            @include breakpoint(laptop) {
+                width: 24px;
+                height: 24px;
+            }
+            @include breakpoint(mobile-all) {
+                width: 18px;
+                height: 18px;
+            }            
+            &:hover, &:focus {
+                outline: none;
+                &:before {
+                    opacity: $slick-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $slick-dot-character;
+                width: 11px;
+                height: 11px;
+                font-family: $slick-font-family;
+                font-size: 0px;
+                line-height: 12px;
+                text-align: center;
+                color: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                border-radius:50%;
+                background:$color-heading;
+                
+            }
+        }
+        &.slick-active button:before {
+            color: $white;
+            background:$color-blue-dark;
+        }
+    }    
+}
+
+#blog-slider .slick-prev,
+#blog-slider .slick-next {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    bottom:0px;
+    padding: 0;
+    outline: none;
+    z-index: 999;
+    border:none;
+    @include animate-fade;
+    @include centre(y);
+    background: transparent;
+    @include breakpoint(mobile-all) {
+        display: none!important;
+    }
+    &:hover {
+        outline: none;
+        opacity: 1;
+        color:$white;
+        background:transparent;
+        &:before {
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &:before {
+        font-family: $slick-font-family;
+        font-size: 50px;
+        line-height: 1;
+        color: $black;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color:$black;
+        font-family: $slick-font-family;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: 'Font Awesome 5 Pro';    
+        color:$white; 
+        @include animate-fade;
+        background: transparent;
+    }
+}
+
+#blog-slider .slick-prev {
+    left: 10px;
+    &:before {
+        color:$white;
+    }
+    &:before {
+        content:'';
+        background: url('../img/ico/chevron-left-regular.svg');
+        width: 50px;
+        background-size:contain;
+        display: block;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+#blog-slider .slick-next {
+    right: 10px;
+    &:before {
+        color:$white;
+    }
+    &:before {
+        content:'';
+        background: url('../img/ico/chevron-right-regular.svg');
+        width: 50px;
+        background-size:contain;
+        display: block;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+
+#reviews-slider .slick-dots {
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 45px;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 11px;
+        width: 11px;
+        margin: 0 9px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 11px;
+            width: 11px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 0px;
+            cursor: pointer;
+            @include breakpoint(laptop) {
+                width: 24px;
+                height: 24px;
+            }
+            @include breakpoint(mobile-all) {
+                width: 18px;
+                height: 18px;
+            }            
+            &:hover, &:focus {
+                outline: none;
+                &:before {
+                    opacity: $slick-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: $slick-dot-character;
+                width: 11px;
+                height: 11px;
+                font-family: $slick-font-family;
+                font-size: 0px;
+                line-height: 12px;
+                text-align: center;
+                color: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                border-radius:50%;
+                background:$color-heading;
+                
+            }
+        }
+        &.slick-active button:before {
+            color: $white;
+            background:$color-blue-dark;
+        }
+    }
+}
+
+#reviews-slider .slick-prev,
+#reviews-slider .slick-next {
+    position: absolute;
+    display: block;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    bottom:0px;
+    padding: 0;
+    outline: none;
+    z-index: 999;
+    border:none;
+    @include animate-fade;
+    @include centre(y);
+    background: transparent;
+    margin-top: -20px;
+    @include breakpoint(mobile-all) {
+        display: none!important;
+    }
+    &:hover {
+        outline: none;
+        opacity: 1;
+        color:$white;
+        background:transparent;
+        &:before {
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &:before {
+        font-family: $slick-font-family;
+        font-size: 50px;
+        line-height: 1;
+        color: $black;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color:$black;
+        font-family: $slick-font-family;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: 'Font Awesome 5 Pro';    
+        color:$white; 
+        @include animate-fade;
+        background: transparent;
+        opacity: 1;
+    }
+}
+
+#reviews-slider .slick-prev {
+    left: 10px;
+    &:before {
+        color:$white;
+    }
+    &:before {
+        content:url('../img/ico/left-red.svg');
+        background-size:contain;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+#reviews-slider .slick-next {
+    right: 10px;
+    &:before {
+        color:$white;
+    }
+    &:before {
+        content: url('../img/ico/red-right.svg');
+        display: block;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}

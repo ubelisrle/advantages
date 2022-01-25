@@ -1,0 +1,32 @@
+// Custom breakpoints
+@mixin breakpoint($value) {
+    @if $value == 'desktop' {
+        @media only screen and (min-width : 1200px) and (max-width:1499px)  { @content; }   
+    } @else if $value == 'desktop-lg' {
+       @media only screen and (min-width : 1440px) { @content; }      
+       
+    } @else if $value == 'mobile' {
+        @media only screen and (max-width : 575.98px) { @content; }    
+
+    } @else if $value == 'mobile-xl' {
+        @media only screen and (min-width: 576px) and (max-width: 767.98px)  { @content; }  
+
+    } @else if $value == 'mobile-all' {
+        @media only screen and  (max-width: 767.98px)  { @content; }          
+        
+    } @else if $value == 'tablet' {
+        @media only screen and (min-width: 768px) and (max-width: 991.98px)  { @content; }  
+
+    } @else if $value == 'laptop' {
+        @media only screen and (min-width: 992px) and (max-width: 1199.98px)  { @content; }          
+
+    } @else {
+      @media only screen and (min-width : 240px) and (max-width : $value) { @content; }
+    }
+  }
+
+@mixin small-lap {
+    @media screen and (min-width: 1025px) and (max-height: 767px) {
+        @content;
+    }
+}

@@ -1,0 +1,150 @@
+
+// mobile menu
+
+.menu-overlay {
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;	
+}
+
+
+.main-menu-sidebar {
+	background:$color-blue-dark;
+	width:100%;
+	position:fixed;
+	height:100%;
+	top:72px;
+	right:-100%;
+	z-index:99999;
+	transition:.45s ease-in-out;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 30px;
+    overflow-y:scroll;
+    /* close menu */
+    header {
+        position: relative;
+    }
+    .close-menu-btn {
+        position: absolute;
+        top:37px;
+        left:11px;
+        color:$white;
+        font-size: 20px;
+        width: 17px;
+        height: 17px;
+        border-radius:100%;
+        img {
+            width: 17px;
+        }
+        i {
+            @include centre(both);
+        }
+    }
+    // arrow
+    small {
+        display:block;
+        width:100%;
+        height:54px;
+        position: absolute!important;
+        top:0px;
+        left:0px;     
+        &:after {
+            content:url('../img/ico/arrow down.svg');
+            position: relative;
+            top:23px;
+            left: -140px;
+        }
+        &.active {
+            &:after {
+                @include animate-fade;
+            }						
+        }          
+    }
+	/* main menu */
+	#sidebar-menu-wrapper {
+		#menu {
+			.nav-links {
+                padding-top: 87px;
+                text-align: right;
+                padding-right: 30px;
+                .menu-item-has-children {
+                    position: relative;
+                }
+				> li > a {
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    font-size: 25px;
+                    color:$white;
+                    position: relative;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    display: block;
+                    font-family: $font-black;
+                    display: block;
+                    width: 100%;
+					&:hover {
+						color:$color-orange;
+					}
+				}
+                > li {
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-wrap: wrap;
+                    small {
+                        @include clear-pos;
+                        order:-1;
+                        margin-right: 14px;
+                    }
+                }
+				li {
+					ul {
+						padding-top: 0px;
+						padding-bottom: 0px;
+						li {
+							a {
+								display: block;
+								font-size: 20px;
+								color:$white;
+								padding-top: 8px;
+								padding-bottom: 8px;
+								position: relative;
+								color:$white;
+                                
+								&:hover {
+									color:$white;
+									padding-left: 20px;
+									&:before {
+										width: 10px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.has-menu > a {
+					position:relative;
+				}
+			}
+		}
+
+	}
+}
+
+
+.body-scroll {
+	overflow-y:hidden!important;
+}
+
+.menu-active {
+	right: 0;
+}

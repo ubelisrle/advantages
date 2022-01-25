@@ -1,0 +1,142 @@
+// Contaienr mob
+.container {
+    @include breakpoint(mobile-all) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+#faq-accordion {
+    .set {
+        .accordion-heading  {
+
+            &:after {
+                font-family: 'Font Awesome 5 Pro';
+                content: '\f105';
+                color: #ddd;
+                @include centre(y);
+                right: 0;
+                @include animate-fade;
+                display: none;
+            }
+            &.active {
+                &:after {
+                    color: #252525;
+                    -webkit-transform: translateY(-50%) rotate(90deg);
+                    -ms-transform: translateY(-50%) rotate(90deg);
+                    transform: translateY(-50%) rotate(90deg);
+                }
+            }
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border-bottom: 1px solid #ececec;
+            p {
+                strong {
+                }
+                a {
+                    color: #034f9b;
+                    &:hover {
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Erorr 404
+#ermac-wrapper {
+    margin-top: 115px;
+    padding-top: 200px;
+    padding-bottom: 187px;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(mobile-all) {
+        margin-top: 72px;
+        padding-top: 130px;
+        padding-bottom: 100px;
+    }
+    .shape-top {
+        position: absolute;
+        top:0px;
+        right:-200px;
+        @include breakpoint(tablet) {
+            width: 550px;
+        }
+        @include breakpoint(mobile-all) {
+            width: 60%;
+            right: -100px;
+        }
+    }
+    .ermac-content {
+        @include breakpoint(mobile-all) {
+            text-align: center;
+        }
+        h1 {
+            font-size: 30px;
+            line-height: 38px;
+            @include breakpoint(mobile-all) {
+                padding-left: 30px;
+                padding-right: 30px;
+                position: relative;
+                z-index:99;
+            }
+        }
+        footer {
+            padding-top: 82px;
+            display: flex;
+            align-items: center;
+            @include breakpoint(tablet) {
+                padding-top: 50px;
+            }
+            @include breakpoint(mobile-all) {
+                padding-top: 50px;
+                display: block;
+            }
+            a, button {
+                display: inline-block;
+                @include btn-cta;
+                width:auto;
+                width: 192px;
+                padding-left: 0px;
+                padding-right: 0px;
+                text-align: center;
+                margin-right: 40px;
+                border:none;
+                @include animate-fade;
+                @include breakpoint(laptop) {
+                    margin-right: 20px;
+                }
+                @include breakpoint(tablet) {
+                    font-size: 14px;
+                    width: 150px;
+                    margin-right: 20px;
+                }
+                @include breakpoint(mobile-all) {
+                    margin-right: 0px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+#regular-page {
+    padding-top: 55px;
+    padding-bottom: 100px;
+    p {
+        margin-bottom: 30px;
+    }
+    h2 {
+        color:$color-red;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .btn-back {
+        @include btn-cta;
+        width:auto;
+        padding-left: 34px;
+        padding-right: 34px;
+    }
+}

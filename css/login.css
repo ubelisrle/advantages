@@ -1,0 +1,120 @@
+/* Login CSS */
+/* Login CSS */
+body.login div#login form#loginform p.submit input#wp-submit {
+	background: #DB2A42;
+	box-shadow:none;
+	border:1px solid #DB2A42;
+	text-shadow: none;
+	text-transform: uppercase;
+	color:#fff;
+	display: block;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 20px;
+    border-radius:0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+	background: #DB2A42;
+	box-shadow:none;
+	border:1px solid #DB2A42;
+	text-shadow: none;
+	text-transform: uppercase;
+	color:#fff;
+	display: block;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 20px;
+    border-radius:0px;
+    font-weight: bold;
+    font-size: 16px;    
+}
+
+body.login div#login form#loginform p.submit input#wp-submit:hover {
+	background:#FDB232;
+	border-color: #FDB232;
+}
+
+.login #login_error, .login .message {
+	border-left:4px solid #1eab60;
+}
+
+.login #backtoblog a:hover, .login #nav a:hover {
+	color:#DB2A42;
+}
+
+.login #backtoblog a {
+	font-weight: bold;
+	color:#FDB232;
+}
+
+.login #backtoblog a, .login #nav a {
+	font-weight: bold;
+	color:#000;
+	opacity: 0.7;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+	background: #DB2A42;
+	box-shadow:none;
+	border:1px solid #DB2A42;
+	text-shadow: none;
+	color:#fff;
+}
+
+.wp-core-ui .button-group.button-large .button:hover , .wp-core-ui .button.button-large:hover {
+	background: #FDB232;
+	border:1px solid #FDB232;
+}
+
+body.login {
+	background-color: #fff;
+}
+
+#login {
+	padding-top: 3%!important;
+}
+
+.login form .forgetmenot label {
+	position: relative;
+	top:5px;
+	float:none;
+}
+
+#nav {
+	text-align: center;
+}
+
+#backtoblog a {
+	text-align: center;
+	background:none;
+	display: block;
+	margin:0px;
+	padding:15px;
+	color:#000!important;
+}
+
+#backtoblog a:hover {
+    color:#FDB232!important;
+}
+
+.login #backtoblog, .login #nav {
+	padding:0px;
+}
+
+.login form {
+	border:1px solid #f0ede9;
+	background: #fff;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius:0px;
+}
+
+.login h1 a {
+	margin-bottom: 0px !important;
+}

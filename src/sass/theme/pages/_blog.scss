@@ -1,0 +1,745 @@
+// Blog listing
+#blog-listing {
+    padding-top: 70px;
+    padding-bottom: 90px;
+    @include breakpoint(tablet) {
+        padding-top: 40px;
+    }
+    @include breakpoint(mobile-all) {
+        padding-top: 40px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(tablet) {
+            flex-wrap: wrap;
+        }
+        @include breakpoint(mobile-all) {
+            flex-wrap: wrap;
+        }
+        .articles {
+            flex: 1;
+            @include breakpoint(tablet) {
+                width: 100%;
+                flex:auto;
+            }
+            @include breakpoint(mobile-all) {
+                width: 100%;
+                flex:auto;
+            }
+            .row {
+                .grid-item {
+                    width: 340px;
+                    margin-right: 67px;
+                    margin-bottom: 40px;
+                    @include breakpoint(laptop) {
+                        margin-right: 30px;
+                    }
+                    @include breakpoint(tablet) {
+                        margin-bottom: 30px;
+                        margin-right: 15px;
+                        margin-left: 15px;
+                        width: 45%;
+                    }
+                    @include breakpoint(mobile-all) {
+                        margin-right: 0px;
+                        width: 100%;
+                        margin-bottom: 25px;
+                    }
+                    .blog-card {
+                        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+                        background:$white;
+                        .blog-inner {
+                            .blog-photo {
+                                position: relative;
+                                img {
+                                    width: 100%;
+                                    @include breakpoint(mobile-all) {
+                                        object-fit: cover;
+                                        height: 185px;
+                                    }
+                                }
+                                .cat {
+                                    position: absolute;
+                                    top:0px;
+                                    left:0px;
+                                    height: 34px;
+                                    color:$white;
+                                    background:$color-red;
+                                    width: 118px;
+                                    font-size: 20px;
+                                    line-height: 34px;
+                                    font-family: $font-italic;
+                                    text-align: center;
+                                    font-style: italic;
+                                    &.cat-infuse {
+                                        background:$color-blue;
+                                    }
+                                    &.cat-unlock {
+                                        background:$color-orange;
+                                    }                                    
+                                }
+                            }
+                            // desc
+                            .blog-desc {
+                                padding-top: 24px;
+                                padding-left: 23px;
+                                padding-right: 23px;
+                                padding-bottom: 27px;
+                                span.date {
+                                    display: block;
+                                    font-size: 12px;
+                                    line-height: 17px;
+                                    margin-bottom: 4px;
+                                }
+                                h3 {
+                                    font-size: 20px;
+                                    line-height: 25px;
+                                    font-family: $font-extra;
+                                    margin-bottom: 10px;
+                                }
+                                p {
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    color:#707070;
+                                    margin-bottom: 30px;
+                                }
+                                a.btn-more {
+                                    font-size: 14px;
+                                    color:$color-red;
+                                    font-family: $font-black;
+                                    &:hover {
+                                        color:$color-orange;
+                                    }
+                                }                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // sidebar
+        .blog-sidebar {
+            width: 200px;
+            position: relative;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            top: 150px;
+            align-self: flex-start;
+            height: auto;            
+            @include breakpoint(tablet) {
+                width: 100%;
+                order:-1;
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 30px;
+                padding-right: 30px;     
+                position: relative;      
+                top:auto;     
+            }
+            @include breakpoint(mobile-all) {
+                width: 100%;
+                order:-1;
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 30px;
+                padding-right: 30px;
+                position: relative;
+                top:auto;
+            }
+            // cats
+            .blog-cats {
+                margin-bottom: 30px;
+                @include breakpoint(tablet) {
+                    order:2;
+                    width: 100%;
+                }
+                @include breakpoint(mobile-all) {
+                    order:2;
+                    width: 100%;
+                }
+                ul {
+                    @include breakpoint(tablet) {
+                        display: flex;
+                        justify-content: center;                        
+                    }
+                    @include breakpoint(mobile-all) {
+                        display: flex;
+                        justify-content: center;                        
+                    }
+                }
+                li {
+                    @include breakpoint(mobile-all) {
+                    }
+                }
+                button {
+                    border:none;
+                    background:transparent;
+                    color:#707070;
+                    font-size: 14px;
+                    font-family: $font-black;
+                    margin-bottom: 14px;
+                    padding-left: 45px;
+                    position: relative;
+                    @include breakpoint(tablet) {
+                        text-align: center;
+                        padding-left: 0px;
+                        margin-left: 15px;
+                        margin-right: 15px;                        
+                    }
+                    @include breakpoint(mobile-all) {
+                        text-align: center;
+                        padding-left: 0px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        font-size: 12px;
+                    }
+                    &:before {
+                        display: block;
+                        position: absolute;
+                        left:0px;
+                        top:-5px;
+                        border:1px solid #DADADA;
+                        width: 27px;
+                        height: 27px;
+                        content:'';
+                        @include animate-fade;
+                        @include breakpoint(tablet) {
+                            @include clear-pos;
+                            margin:0px auto;
+                            margin-bottom: 10px;
+                        }
+                        @include breakpoint(mobile-all) {
+                            @include clear-pos;
+                            margin:0px auto;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &.is-checked {
+                        &:before {
+                            border-color:$color-red;
+                            background:$color-red;
+                        }
+                    }
+                }
+            }
+            // search
+            .blog-search {
+                margin-bottom: 70px;
+                position: relative;
+                @include breakpoint(tablet) {
+                    margin-bottom: 40px;
+                    width: 100%;                    
+                }
+                @include breakpoint(mobile-all) {
+                    margin-bottom: 40px;
+                    width: 100%;
+                }
+                input[type="text"] {
+                    border:1px solid #DADADA;
+                    height: 37px;
+                    line-height: 37px;
+                    padding-left: 10px;
+                    font-size: 14px;
+                    color:#5D5B5B;
+                    @include breakpoint(tablet) {
+                        width: 100%;
+                        height: 44px;                        
+                    }
+                    @include breakpoint(mobile-all) {
+                        width: 100%;
+                        height: 44px;
+                    }
+                }
+                input[type="submit"] {
+                    position: absolute;
+                    top:0px;
+                    right:0px;
+                    width: 42px;
+                    height: 37px;
+                    background-image:url('../img/ico/search-icon.svg');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-color:$color-red;
+                    border:none;
+                    font-size: 0px;
+                    @include animate-fade;
+                    @include breakpoint(tablet) {
+                        height: 44px;
+                        width: 63px;                        
+                    }
+                    @include breakpoint(mobile-all) {
+                        height: 44px;
+                        width: 63px;
+                    }
+                    &:hover {
+                        background-color:$color-orange;
+                        cursor: pointer;
+                    }
+                }
+            }
+            // Newsletter
+            .blog-nl {
+                @include breakpoint(tablet) {
+                    display: none;
+                }
+                @include breakpoint(mobile-all) {
+                    display: none;
+                }
+                span.title {
+                    display: block;
+                    font-family: $font-black;
+                    color:$color-red;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                span.subtitle {
+                    display: block;
+                    font-family: $font-black;
+                    color:$color-heading;
+                    font-size: 16px;
+                    margin-bottom: 11px;
+                    line-height: 20px;
+                }
+                .form-wrapper {
+                    position: relative;
+                    padding-top: 7px;
+                    input[type="email"], input[type="text"] {
+                        width: 100%;
+                        height: 38px;
+                        line-height: 38px;
+                        border:1px solid #DADADA;
+                        padding-left: 13px;
+                        font-size: 14px;
+                        margin-bottom: 13px;
+                    }
+                    input[type="submit"] {
+                        background:$color-red;
+                        color:$white;
+                        width: 130px;
+                        height: 35px;
+                        line-height: 35px;
+                        border:none;
+                        font-size: 16px;
+                        font-family: $font-black;
+                        @include animate-fade;
+                        &:hover {
+                            background:$color-orange;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Single Page
+#single-page {
+    padding-top: 69px;
+    padding-bottom: 131px;
+    @include breakpoint(tablet) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        overflow: hidden;
+    }
+    @include breakpoint(mobile-all) {
+        padding-top: 48px;
+        padding-bottom: 70px;
+        overflow: hidden;
+    }
+    .container {
+        max-width: 834px;
+        position: relative;
+        @include breakpoint(tablet) {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+        @include breakpoint(mobile-all) {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+        article {
+            padding-bottom: 80px;
+            @include breakpoint(mobile-all) {
+                padding-bottom: 50px;
+            }
+            .content-full {
+                iframe {
+                    display: block;
+                    margin:0px auto;
+                }
+                strong {
+                    color:$black;
+                    font-family: $font-bold;
+                }
+                i, em {
+                    font-style: italic;
+                }
+                p {
+                    margin-bottom: 25px;
+                    @include breakpoint(mobile-all) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                    a {
+                        color:$color-red;
+                        font-family: $font-bold;
+                        &:hover {
+                            color:$color-orange;
+                        }
+                    }
+                }
+                ul {
+                    margin-bottom: 30px;
+                    list-style-type: disc;
+                    margin-left: 50px;
+                    @include breakpoint(mobile-all) {
+                        margin-left: 20px;
+                    }
+                    li {
+                        font-size: 18px;
+                        letter-spacing: normal;
+                        line-height: 25px;
+                        color:$color-text;                        
+                        margin-bottom: 15px;
+                        @include breakpoint(mobile-all) {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                        a {
+                            color:$color-red;
+                            font-family: $font-bold;
+                            &:hover {
+                                color:$color-orange;
+                            }
+                        }                        
+                    }
+                }
+                ol {
+                    margin-bottom: 30px;
+                    list-style-type: auto;
+                    margin-left: 50px;
+                    @include breakpoint(mobile-all) {
+                        margin-left: 20px;
+                    }                    
+                    li {
+                        font-size: 18px;
+                        letter-spacing: normal;
+                        line-height: 25px;
+                        color:$color-text;                        
+                        margin-bottom: 15px;
+                        @include breakpoint(mobile-all) {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }      
+                        a {
+                            color:$color-red;
+                            font-family: $font-bold;
+                            &:hover {
+                                color:$color-orange;
+                            }
+                        }            
+                    }
+                }                
+                h2 {
+                    font-family: $font-black;
+                    font-size: 22px;
+                    margin-bottom: 5px;
+                    line-height: 22px;
+                    color:$color-red;
+                    @include breakpoint(mobile-all) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    } 
+                }
+                h3 {
+                    font-family: $font-black;
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                    line-height: 22px;
+                    @include breakpoint(mobile-all) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+                h4 {
+                    font-family: $font-black;
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                    line-height: 22px;
+                    color:$color-red;
+                    @include breakpoint(mobile-all) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }                    
+                }
+            }
+        }
+        // blog bottom
+        .blog-bottom {
+            padding-bottom: 67px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            @include breakpoint(mobile-all) {
+                flex-wrap: wrap;
+                text-align: center;
+                padding-bottom: 30px;
+            }           
+            .blog-nl {
+                width: 316px;
+                span.title {
+                    display: block;
+                    font-family: $font-black;
+                    color:$color-red;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                span.subtitle {
+                    display: block;
+                    font-family: $font-black;
+                    color:$color-heading;
+                    font-size: 16px;
+                    margin-bottom: 11px;
+                    line-height: 20px;
+                }
+                .form-wrapper {
+                    position: relative;
+                    padding-top: 7px;
+                    input[type="email"],  input[type="text"] {
+                        width: 100%;
+                        height: 38px;
+                        line-height: 38px;
+                        border:1px solid #DADADA;
+                        padding-left: 13px;
+                        font-size: 14px;
+                        margin-bottom: 13px;
+                        @include breakpoint(mobile-all) {
+                            height: 60px;
+                            line-height: 60px;
+                        }
+                    }
+                    input[type="submit"] {
+                        background:$color-red;
+                        color:$white;
+                        width: 130px;
+                        height: 35px;
+                        line-height: 35px;
+                        border:none;
+                        font-size: 16px;
+                        font-family: $font-black;
+                        @include animate-fade;
+                        @include breakpoint(mobile-all) {
+                            width: 100%;
+                            height: 60px;
+                            line-height: 60px;
+                            font-size: 16px;
+                        }
+                        &:hover {
+                            background:$color-orange;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            // nav
+            .blog-nav {
+                @include breakpoint(mobile-all) {
+                    order:-1;
+                    width: 100%;
+                    margin-bottom: 60px;
+                }
+                a {
+                    color:$color-red;
+                    font-family: $font-black;
+                    span {
+                        margin-left: 5px;
+                        position: relative;
+                        top:2px;
+                        @include breakpoint(tablet) {
+                            width: 16px;
+                        }                        
+                    }
+                    &:hover {
+                        color:$color-orange;
+                    }
+                }
+            }
+
+        }
+        // share
+        .blog-share {
+            @include breakpoint(mobile-all) {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            a {
+                margin-right: 15px;
+                @include breakpoint(mobile-all) {
+                    margin-right: 5px;
+                }
+            }
+            span.title {
+                display: block;
+                font-size: 16px;
+                line-height: 24px;
+                font-family: $font-black;
+                color:$color-blue;
+                margin-bottom: 10px;
+                @include breakpoint(mobile-all) {
+                    height: 40px;
+                    line-height: 38px;
+                    border:2px solid $color-red;
+                    width: 96px;
+                    text-align: center;
+                    color:$color-red;
+                    margin-right: 20px;
+                    position: relative;
+                    top:5px;
+                }
+            }
+        }
+    }
+}
+
+.wp-pagenavi {
+    text-align: center;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 40px;
+    padding-top: 50px;
+    span.pages {
+        display: none;
+    }
+    a, span {
+        border:none;
+        font-size: 16px;
+        font-family: $font-black;
+        color:#333333;
+    }
+    span.current {
+        color:$color-red;
+    }
+}
+
+.discover-blog {
+    background:$color-red;
+}
+
+.infuse-blog {
+    background:$color-blue!important;
+    small {
+        background:$color-blue!important;
+    }
+}
+
+.unlock-blog {
+    background:$color-orange!important;
+    small {
+        background:$color-orange!important;
+    }
+}
+
+.cat-unlock {
+    small {
+        background:$color-orange!important;
+    }
+}
+
+.cat-infuse {
+    small {
+        background:$color-blue!important;
+    }
+}
+
+#to-top {
+    text-align: right;
+    margin-bottom: 50px;
+    position: fixed;
+    margin-left: 900px;
+    @include breakpoint(desktop) {
+        margin-left: 800px;
+    }
+    // z-index:10;
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        @include breakpoint(mobile) {
+            justify-content: center;
+        }        
+    }
+    a {
+        width: 120px;
+        text-align: center;
+        display: block;
+        @include breakpoint(mobile-all) {
+            width: 120px;
+        }
+        img {
+            width: 68px;
+            display: block;
+            margin:0px auto;
+            margin-bottom: 15px;
+            @include breakpoint(mobile-all) {
+                width: 52px;
+            }
+        }
+        small {
+            font-size: 20px;
+            font-family: $font-black;
+            color:$color-blue;
+            @include breakpoint(mobile-all) {
+                font-size: 16px;
+            }
+        }
+    }
+    &.mobile-top {
+        display: none;
+        @include breakpoint(laptop) {
+            display: block;
+            position: relative;
+            right:auto;                
+        }
+        @include breakpoint(tablet) {
+            display: block;
+            position: relative;
+            right:auto;            
+        }
+        @include breakpoint(mobile-all) {
+            display: block;
+            position: relative;
+            right:auto;
+        }
+    }
+    &.desktop-top {
+        @include breakpoint(laptop) {
+            display: none;
+        }        
+        @include breakpoint(tablet) {
+            display: none;
+        }
+        @include breakpoint(mobile-all) {
+            display: none;
+        }
+    }
+}
+
+.shape-bottom-blog {
+    position: absolute;
+    bottom:-400px;
+    right:-200px;
+    @include breakpoint(laptop) {
+        display: none;
+    }
+    @include breakpoint(tablet) {
+        display: none;
+    }
+    @include breakpoint(mobile) {
+        display: none;
+    }
+} 
