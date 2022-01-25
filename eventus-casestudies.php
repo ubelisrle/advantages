@@ -153,7 +153,39 @@ get_header();
             </div>
             <!-- // contaiener  -->
         </div>
-        <!-- // case values  -->      
+        <!-- // case values  --> 
+        
+        <div class="case-performance">
+
+            <img src="<?php bloginfo('template_directory'); ?>/img/bg/seasons-shape-left.png" alt="" class="img-shape-right">
+        
+            <div class="container">                
+
+                <div class="case-text">
+                    <h2><?php the_field('block_title_performance_aventus'); ?></h2>
+                    <p><?php the_field('block_subtitle_performance_aventus'); ?></p>                    
+                </div>
+                <!-- // text  -->
+
+                <div class="stats">
+                    <div class="stat-one stat">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/misc/stat-1.png" alt="" class="stat-img">
+                    <h4><?php the_field('statistics_1'); ?></h4>
+                    </div>
+                    <div class="stat-two stat">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/misc/stat-2.png" alt="" class="stat-img">
+                    <h4><?php the_field('statistics_2'); ?></h4>
+                    </div>
+                    <div class="stat-two stat">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/misc/stat-3.png" alt="" class="stat-img">
+                    <h4><?php the_field('statistics_3'); ?></h4>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // contaiener  -->
+        </div>
+        <!-- // case performance  -->
         
         <div class="case-portfoliox">
             <div class="container">

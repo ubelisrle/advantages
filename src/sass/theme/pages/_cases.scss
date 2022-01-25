@@ -379,6 +379,11 @@
                     width: 100%;
                     display: block;
                 }
+                small {
+                    font-size: 60%;
+                    position: relative;
+                    top: -5px;
+                }
             }
         }     
     }
@@ -1822,6 +1827,8 @@
             }
         }
     }
+
+    
     // rwoth
     .case-growth {
         margin-bottom: 0px;
@@ -2654,3 +2661,109 @@
     
 }
 
+// performance
+.case-performance {
+    margin-bottom: 80px;
+    position: relative;
+    @include breakpoint(mobile-all) {
+        margin-bottom: 50px;
+    }
+    .img-shape-right {
+        position: absolute;
+        right:0px;
+        top:0px;
+        z-index:-1;
+        @include breakpoint(desktop) {
+            top:200px;
+            width: 300px;
+        }
+        @include breakpoint(laptop) {
+            width: 300px;
+            top:250px;
+        }
+        @include breakpoint(tablet) {
+            width: 300px;
+            top:200px;
+        }
+        @include breakpoint(mobile-all) {
+            display: none;
+        }
+    }
+    .container {
+        @include breakpoint(mobile-all) {
+            display: block;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 63px;
+            position: relative;
+            @include breakpoint(mobile-all) {
+                flex-direction: column;
+                padding-bottom: 20px;
+            }
+            .stat {
+                position: relative;
+                @include breakpoint(mobile-all) {
+                    padding-bottom: 40px;
+                    max-width: 80%;
+                    margin: auto;
+                }
+                img {
+                    position: absolute;
+                    left: -27px;
+                    z-index: -1;
+                    top: -16px;
+                }
+                h4 {
+                    font-size: 16px;
+                    font-family: "Muli Black";
+                }
+            }
+            
+        }        
+        .case-text {
+            max-width: 560px;
+            padding-top: 90px;
+            text-align: center;
+            margin: auto;
+            @include breakpoint(tablet) {
+                padding-top: 10px;
+                padding-left: 30px;
+            }
+            @include breakpoint(mobile-all) {
+                width: 100%;
+                padding-top: 0px;
+            }
+            h2 {
+                font-size: 30px;
+                line-height: 38px;
+                margin-bottom: 20px;
+                @include breakpoint(tablet) {
+                    font-size: 26px;
+                }
+                @include breakpoint(mobile-all) {
+                    font-size: 26px;
+                }
+            }
+            p {
+                font-size: 16px;
+                line-height: 25px;
+                strong , b {
+                    color:$black;
+                    font-family: $font-bold;
+                }     
+                em {
+                    font-style: italic;
+                }               
+            }
+            a.btn-cta {
+                @include btn-cta2;
+                margin-top: 50px;
+                @include breakpoint(tablet) {
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}
