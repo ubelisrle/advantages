@@ -2767,3 +2767,45 @@
         }
     }
 }
+
+// Case notices
+
+.case-notices {
+    padding-top: 125px;
+    .container {
+        display: flex;
+        @include breakpoint(mobile-all) {
+            flex-direction: column;
+        }
+        .notice {
+            p {
+                font-size: 14px;
+                font-family: $font-main;
+                line-height: 1.5;
+                
+                @include breakpoint(mobile-all) {
+                    margin-bottom: 15px;
+                }
+                small {
+                    font-size: 60%;
+                    position: relative;
+                    top: -5px;
+                }
+            }
+        }
+        .notice.notice-one {
+            max-width: 90%;
+            margin-right: auto;
+            @include breakpoint(mobile-all) {
+                margin: auto;
+            }
+        }
+        .notice.notice-two {
+            max-width: 90%;
+            margin-left: auto;
+            @include breakpoint(mobile-all) {
+                margin: auto;
+            }
+        }
+    }
+}

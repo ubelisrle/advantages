@@ -228,6 +228,27 @@ get_header();
             <a href="#top-page" class="btn-more btn-up">Back to top <span class="icon-Polygon-44-uper"></span></a>
         </footer>
 
+        <section class="case-notices">
+            <div class="container">
+                <div class="notice notice-one">
+                    <p class="">
+                        <?php the_field('explanation_1'); ?>
+                    </p>
+                    <p class="">
+                        <?php the_field('explanation_2'); ?>
+                    </p>
+                </div>
+                <div class="notice notice-two">
+                    <p class="">
+                        <?php the_field('explanation_3'); ?>
+                    </p>
+                    <p class="">
+                        <?php the_field('explanation_4'); ?>
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </section>
     <!-- // case single  -->
 
